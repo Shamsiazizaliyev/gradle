@@ -1,0 +1,29 @@
+server:
+  port: 8084
+
+
+
+az:
+  ms:
+    app:
+      name: crocusoft ms
+      version: 1.0
+      header: welcome
+      list:
+        - eli
+        - mamed
+        - nazim
+      map:
+        ehmed: 100
+        malik: 200
+
+      students:
+        -
+          id: 1
+          name: test
+          surname: testyeni
+        -
+          id: 3
+          name: aaa
+          surname: azer
+
