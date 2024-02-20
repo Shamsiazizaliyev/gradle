@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    networks:
+       - custom-network
+    container_name: my_mysql_container
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
+    ports:
+      - '3309:3306'
+    volumes:
+      - db:/var/lib/mysql
+
+
+  adminer:
+  #  depends_on:
+  #        - mysql
+
+    restart: always
+
+    image: adminer
+    container_name: adminer_container
+    ports:
+      - '8081:8080'
+    networks:
+     - custom-network
+
+#  myapp:
+#    image: demo:v8
+#    ports:
+#      - '8087:8087'
+#    networks:
+#     -  custom-network
+#    depends_on:
+#           - mysql
+#    environment:
+#      HOST: mysql
+#
+#
+volumes:
+  db:
+
+networks:
+   custom-network:
+
